@@ -2,15 +2,13 @@ if (jQuery('#dealertrend-inventory-api').length){
 	
 	saleclass=saleclass=jQuery('.eagle-saleclass:first').text();		
 
-
-
 //NEW List and Detail
 
 if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	//List
 	if (jQuery('#eagle-listing').length){
-	jQuery('.eagle-listing-button').css({'width':'20%'});
 	
+	jQuery('.eagle-listing-button').css({'width':'20%'});
 		jQuery('.eagle-vehicle').each(function(){
 		  vin = jQuery(this).attr('id');
     make=jQuery(this).find('.eagle-make').text();
@@ -59,4 +57,18 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
     		}
 	}
 }
+if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/used/i) != null) {
+	if (jQuery('#eagle-listing').length){
+	  jQuery('.eagle-vehicle').each(function(){
+			vin = jQuery(this).attr('id');
+			text = "<a class='carfax' href='http://www.carfax.com/VehicleHistory/p/Report.cfx?partner=DVW_1&vin="+vin+"' target='_blank'><img src='http://www.carfaxonline.com/media/img/subscriber/buyback.jpg'; width='145' height='56' border='0'></a>";
+			jQuery(this).find('.eagle-column-right').append(text);
+		});
+		jQuery('.carfax').css({'display':'block','margin':'5% 0 0 0'});
+	} else { //Detail
+	
+	}
+}
+
+
 }
