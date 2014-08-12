@@ -7,6 +7,9 @@ if (jQuery('#dealertrend-inventory-api').length){
 if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	//List
 	if (jQuery('#eagle-listing').length){
+		
+	 jQuery('#eagle-top-search').prepend(jQuery('#detail-widget-area'));  //move search widget to top
+
 	
 	jQuery('.eagle-listing-button').css({'width':'20%'});
 		jQuery('.eagle-vehicle').each(function(){
