@@ -9,36 +9,36 @@ if (jQuery('#dealertrend-inventory-api').length){
 if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	//List
 	if (jQuery('#eagle-listing').length){
+	jQuery('.eagle-listing-button').css({'width':'20%'});
+	
 		jQuery('.eagle-vehicle').each(function(){
-			vin = jQuery(this).attr('id');
-			model=jQuery('#eagle-content-headline .eagle-make').text();
-		  switch(model){
+		  vin = jQuery(this).attr('id');
+    make=jQuery(this).find('.eagle-make').text();
+
+  		switch(make){
 		  	case 'Ford':
-					linkFord =("<a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a>");
-			jQuery(this).find('.eagle-listing-button').append(text);
-					jQuery('.ws').css({'font-weight':'bold','color':'red'});
-		  	break;
-		  	case 'Chevrolet':
-					linkChevy =("<a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a>");
-			jQuery(this).find('.eagle-listing-button').append(text);
-					jQuery('.ws').css({'font-weight':'bold','color':'red'});
+					linkFord =("<div class='eagle-listing-button eagle-confirm-button'><a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a></div>");
+  			jQuery(this).find('.eagle-listing-buttons').append(linkFord);
+				break;
+	  		case 'Chevrolet':
+					linkChevy =("<div class='eagle-listing-button eagle-confirm-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
+					jQuery(this).find('.eagle-listing-buttons').append(linkChevy);
 		  	break;
 		  	}
-			
-			modelRegex=/(chrysler|dodge|ram|jeep)/i;
-    		if (modelRegex.test(model)) {
-    			linkCDJR = ("<a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a>");
-    			jQuery('.eagle-listing-button').append(linkCDJR);
-					jQuery('.ws').css({'font-weight':'bold','color':'red'});
-    		}
 
-		});
+			makeRegex=/(chrysler|dodge|ram|jeep)/i;
+    		if (makeRegex.test(make)) {
+    			linkCDJR = ("<div class='eagle-listing-button eagle-confirm-button'><a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a></div>");
+    			jQuery(this).find('.eagle-listing-buttons').append(linkCDJR);
+    		}
+});
+		
 	}
 	 else {	
 	//Detail
 		vin = jQuery('#eagle-vin-number').text();
-		model=jQuery('#eagle-content-headline .eagle-make').text();
-		  switch(model){
+		make=jQuery('#eagle-content-headline .eagle-make').text();
+		  switch(make){
 		  	case 'Ford':
 					linkFord =("<a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a>");
 					jQuery('#eagle-stock-vin-wrapper').append(linkFord);
