@@ -34,6 +34,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	}
 	 else {	
 	//Detail
+	      
 		vin = jQuery('#eagle-vin-number').text();
 		make=jQuery('#eagle-content-headline .eagle-make').text();
 		  switch(make){
@@ -58,6 +59,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	}
 }
 	if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/used/i) != null) {
+		jQuery('.inventory-list.widget').remove(); //remove search widget
 		if (jQuery('#eagle-listing').length){
 		  jQuery('.eagle-vehicle').each(function(){
 				vin = jQuery(this).attr('id');
