@@ -44,12 +44,12 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 		  	case 'Ford':
 					linkFord =("<a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a>");
 					jQuery('#eagle-stock-vin-wrapper').append(linkFord);
-					jQuery('.ws').css({'font-weight':'bold','color':'red'});
+					jQuery('.ws').css({'font-weight':'bold','color':'#2c3e50'});
 		  	break;
 		  	case 'Chevrolet':
 					linkChevy =("<a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a>");
 					jQuery('#eagle-stock-vin-wrapper').append(linkChevy);
-					jQuery('.ws').css({'font-weight':'bold','color':'red'});
+					jQuery('.ws').css({'font-weight':'bold','color':'#2c3e50'});
 		  	break;
 		  	}
 
@@ -57,7 +57,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
     		if (modelRegex.test(model)) {
     			linkCDJR = ("<a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a>");
     			jQuery('#eagle-stock-vin-wrapper').append(linkCDJR);
-					jQuery('.ws').css({'font-weight':'bold','color':'red'});
+					jQuery('.ws').css({'font-weight':'bold','color':'#2c3e50'});
     		}
 	}
 }
