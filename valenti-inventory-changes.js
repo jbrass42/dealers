@@ -54,7 +54,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 		  	}
 
       	makeRegex=/(chrysler|dodge|ram|jeep)/i;
-    		if (modelRegex.test(make)) {
+    		if (makeRegex.test(make)) {
     			linkCDJR = ("<a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a>");
     			jQuery('#eagle-stock-vin-wrapper').append(linkCDJR);
 					jQuery('.ws').css({'font-weight':'bold','color':'#2c3e50'});
