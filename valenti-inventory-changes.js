@@ -128,15 +128,12 @@ function get_display_no_ais( prices, page ){
 	page = typeof page !== 'undefined' ? page : '';
 
 	display = '';
-	
- if( prices['msrp'] > 0 ){
-		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
-	}
 
-	if( prices['msrp'] && prices['msrp'] == prices['asking'] ){
-		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
-	} else if ( prices['asking'] > 0 ){
+	  if( prices['msrp'] > 0 ){
+         display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
+            if ( prices['asking'] > 0 && (prices['msrp'] !== prices['asking'])){
 		display += '<div class="js-eagle-msrp '+page+'">Asking Price: ' + currency_display(prices['asking']) + '</div>';
+	    }    
 	}
 	if( fields['rebate'] ){
 		display += '<div class="js-eagle-rebate '+page+'">Factory Rebate: $' + prices['rebate'] + '</div>';
@@ -218,15 +215,14 @@ function get_display( prices, incentive, link, page ){
 
 	display = '';
   
- if( prices['msrp'] > 0 ){
-		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
-	}
-	
-	if( prices['msrp'] && prices['msrp'] == prices['asking'] ){
-		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
-	} else if ( prices['asking'] > 0 ){
+
+        if( prices['msrp'] > 0 ){
+         display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
+            if ( prices['asking'] > 0 && (prices['msrp'] !== prices['asking'])){
 		display += '<div class="js-eagle-msrp '+page+'">Asking Price: ' + currency_display(prices['asking']) + '</div>';
+	    }    
 	}
+
 	if( fields['rebate'] ){
 		display += '<div class="js-eagle-rebate '+page+'">Factory Rebate: $' + prices['rebate'] + '</div>';
 	}
@@ -254,6 +250,4 @@ jQuery('.eagle-price').on( 'click', '.js-eagle-ais-link', function ()  {
 	return false;
 });
 /******************end price moving***********************************/
-
-
 
