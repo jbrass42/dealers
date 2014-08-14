@@ -129,9 +129,9 @@ function get_display_no_ais( prices, page ){
 
 	display = '';
 	
- if( prices['msrp'] > 0 ){
+/* if( prices['msrp'] > 0 ){
 		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
-	}
+	}*/
 
 	if( prices['msrp'] && prices['msrp'] == prices['asking'] ){
 		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
@@ -218,9 +218,9 @@ function get_display( prices, incentive, link, page ){
 
 	display = '';
   
-  if( prices['msrp'] > 0 ){
+ /* if( prices['msrp'] > 0 ){
 		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
-	}
+	}*/
 	
 	if( prices['msrp'] && prices['msrp'] == prices['asking'] ){
 		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
