@@ -202,3 +202,56 @@ function currency_display( val ){
 	return '$' + display;
 }
 
+function get_fields( fields ){
+	obj = {};
+
+	jQuery( fields ).each( function() {
+		obj[ jQuery(this).attr( 'alt' ) ] = jQuery(this).text();
+	});
+
+	return obj;
+}
+
+function get_display( prices, incentive, link, page ){
+
+	page = typeof page !== 'undefined' ? page : '';
+
+	display = '';
+  
+  if( prices['msrp'] > 0 ){
+		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
+	}
+	
+	if( prices['msrp'] && prices['msrp'] == prices['asking'] ){
+		display += '<div class="js-eagle-msrp '+page+'">MSRP: ' + currency_display(prices['msrp']) + '</div>';
+	} else if ( prices['asking'] > 0 ){
+		display += '<div class="js-eagle-msrp '+page+'">Asking Price: ' + currency_display(prices['asking']) + '</div>';
+	}
+	if( fields['rebate'] ){
+		display += '<div class="js-eagle-rebate '+page+'">Factory Rebate: $' + prices['rebate'] + '</div>';
+	}
+  if( fields['discount']){
+		display += '<div class="js-eagle-discount '+page+'">Dealer Discount: $'+ (prices['discount']) +'</span></div>';
+	}
+//change to not show 0
+  if (prices['asking'] == 0){
+	display += '<div class="js-eagle-main '+page+'"><span class="text">Call for Price</span><br><span class="num"></span></div>';
+  		}
+  else {if( fields['main']){
+	display += '<div class="js-eagle-main '+page+'"><span class="text">Your Valenti Price:</span><br><span class="num">'+ currency_display(prices['main']) +'</span></div>';
+	}}
+//end
+	
+	if( incentive && link ){
+		display += '<div class="js-eagle-ais-wrap '+page+'"><div class="js-eagle-ais-val">'+incentive+'</div><div class="js-eagle-ais-link">'+link+'</div></div>';
+	}
+
+	return display;
+}
+
+jQuery('.eagle-price').on( 'click', '.js-eagle-ais-link', function ()  {
+	jQuery( '.aisframe' ).dialog( 'open' );
+	return false;
+});
+/******************end price moving***********************************/
+
