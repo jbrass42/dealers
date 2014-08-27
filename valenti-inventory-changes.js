@@ -9,7 +9,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	if (jQuery('#eagle-listing').length){
 		
 	 jQuery('#eagle-top-search').prepend(jQuery('#detail-widget-area'));  //move search widget to top
-
+         jQuery('#detail-widget-area .inventory-list:last').remove();
 	
 	jQuery('.eagle-listing-button').css({'width':'20%'});
 		jQuery('.eagle-vehicle').each(function(){
@@ -62,7 +62,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	}
 }
 	if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/used/i) != null) {
-		jQuery('.inventory-list.widget').remove(); //remove search widget
+		jQuery('#detail-widget-area .inventory-list:first').remove(); //remove NEW search widget
 		if (jQuery('#eagle-listing').length){
 		  jQuery('.eagle-vehicle').each(function(){
 				vin = jQuery(this).attr('id');
