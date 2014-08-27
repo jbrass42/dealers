@@ -62,6 +62,8 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
 	}
 }
 	if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/used/i) != null) {
+		jQuery('#eagle-top-search').prepend(jQuery('#detail-widget-area'));  //move search widget to top
+
 		jQuery('#detail-widget-area .inventory-list:first').remove(); //remove NEW search widget
 		if (jQuery('#eagle-listing').length){
 		  jQuery('.eagle-vehicle').each(function(){
