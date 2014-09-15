@@ -3,6 +3,8 @@ if( jQuery('#eagle-detail').length ) {
 jQuery('.eagle-content-sidebar-wrapper .eagle-forms > div').remove();
 jQuery('.eagle-content-sidebar-wrapper .eagle-forms').append(jQuery('#eagle-widget-area'));
 jQuery('.gf-hidden').css('display','none');
+jQuery('#eagle-contact-name,#eagle-contact-vehicle-location').css({'display':'none'});
+
 
     var	dealer_name = jQuery('#eagle-contact-name').text();
     var	dealer_address = jQuery('#eagle-contact-vehicle-location').text();
