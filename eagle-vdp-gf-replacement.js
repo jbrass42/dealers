@@ -27,5 +27,5 @@ jQuery('.gf-hidden').css('display','none');
 	jQuery('.trim .ginput_container input').val( trim ); 
 	jQuery('.stock_number .ginput_container input').val( stock_number ); 
 	jQuery('.vin .ginput_container input').val( vin ); 
-	jQuery('.sale_price .ginput_container input').val( main_price ); 
+	jQuery('.main_price .ginput_container input').val( main_price ); 
 }
