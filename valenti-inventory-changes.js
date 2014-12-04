@@ -1,10 +1,10 @@
 if (jQuery('#dealertrend-inventory-api').length){
 	
-	saleclass=saleclass=jQuery('.eagle-saleclass:first').text();		
+	saleclass=jQuery('.eagle-saleclass:first').text();		
 
 //NEW List and Detail
 
-if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
+if (saleclass === 'New') {
 	//List
 	if (jQuery('#eagle-listing').length){
 		
@@ -61,7 +61,7 @@ if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/new/i) != null) {
     		}
 	}
 }
-	if (jQuery('.eagle-breadcrumbs a:nth-child(2)').text().match(/used/i) != null) {
+	if (saleclass === 'Used') {
 		jQuery('#eagle-top-search').prepend(jQuery('#detail-widget-area'));  //move search widget to top
 
 		jQuery('#detail-widget-area .inventory-list:first').remove(); //remove NEW search widget
