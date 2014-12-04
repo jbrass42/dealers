@@ -163,7 +163,7 @@ function get_display_no_ais( prices, page ){
 
 //for vehicles with ais
 if( jQuery('#dealertrend-inventory-api').length ){
- if (jQuery('.eagle-price .eagle-ais-incentive-s-text').length){
+ if (jQuery('.eagle-price .eagle-ais-link').length){
 	if( jQuery('#eagle-listing').length ){
 		jQuery('.eagle-vehicle').each( function() {
 			if( jQuery(this).find('.view-available-rebates').length && jQuery(this).find('.eagle-saleclass').text().match(/new/i) != null ){
@@ -171,7 +171,7 @@ if( jQuery('#dealertrend-inventory-api').length ){
 
 				fields = get_fields( jQuery(this).find('.hidden-vehicle-prices > div') );
 				ais = jQuery(this).find('.eagle-price .eagle-ais-incentive-l-text').text();
-				link = ( jQuery(this).find('.eagle-price .eagle-ais-link').html() ).replace(/view ais/i, 'View Incentive Details');
+				link = ( jQuery(this).find('.eagle-price .eagle-ais-link').html() ).replace(/view incentive/i, 'View Incentive Details');
 
 				jQuery(this).find('.eagle-price > div').css({'display' : 'none'})
 
@@ -186,7 +186,7 @@ if( jQuery('#dealertrend-inventory-api').length ){
 
 		fields = get_fields( jQuery('.hidden-vehicle-prices > div') );
 		ais = jQuery('.eagle-price .eagle-ais-incentive-l-text').text();
-		link = ( jQuery('.eagle-price .eagle-ais-link').html() ).replace(/view ais/i, 'View Incentive Details');
+		link = ( jQuery('.eagle-price .eagle-ais-link').html() ).replace(/view incentive/i, 'View Incentive Details');
 
 		jQuery('.eagle-price > div').css({'display' : 'none'})
 
