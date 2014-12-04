@@ -186,7 +186,7 @@ if( jQuery('#dealertrend-inventory-api').length ){
 
 		fields = get_fields( jQuery('.hidden-vehicle-prices > div') );
 		ais = jQuery('.eagle-price .eagle-ais-incentive-l-text').text();
-		link = ( jQuery('.eagle-price .eagle-ais-incentive-s-text').html() ).replace(/view ais/i, 'View Incentive Details');
+		link = ( jQuery('.eagle-price .eagle-ais-link').html() ).replace(/view ais/i, 'View Incentive Details');
 
 		jQuery('.eagle-price > div').css({'display' : 'none'})
 
