@@ -253,3 +253,22 @@ jQuery('.eagle-price').on( 'click', '.js-eagle-ais-link', function ()  {
 });
 /******************end price moving***********************************/
 
+// Subaru price display
+if (jQuery('#dealertrend-inventory-api').length){
+  saleclass=jQuery('.eagle-saleclass:first').text();
+  if (saleclass === 'New') {
+    if (jQuery('#eagle-listing').length){
+      jQuery('.eagle-vehicle').each(function(){
+        make=jQuery(this).find('.eagle-make').text();
+        if (make=='Subaru'){
+          jQuery(this).find('.js-eagle-asking').remove();
+          jQuery(this).find('.js-eagle-main ').remove();
+        }
+      });
+    }
+    else { 
+      jQuery('.js-eagle-asking').remove();
+      jQuery('.js-eagle-main').remove();
+         }
+}
+}
