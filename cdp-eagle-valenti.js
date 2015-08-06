@@ -46,18 +46,18 @@ if (saleclass === 'New') {
 function addWindowSticker(make){
   switch(make){
   	case 'Ford':
-  		linkFord =("<div class='eagle-listing-button eagle-confirm-button'><a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a></div>");
+  		linkFord =("<div class='inventory-listing-button inventory-confirm-button'><a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a></div>");
     	return linkFord;
   		break;
   	case 'Chevrolet':
-  		linkChevy =("<div class='eagle-listing-button eagle-confirm-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
+  		linkChevy =("<div class='inventory-listing-button inventory-confirm-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
   		return linkChevy;
   		break;
   }
   
   makeRegex=/(chrysler|dodge|ram|jeep)/i;
   if (makeRegex.test(make)) {
-    linkCDJR = ("<div class='eagle-listing-button eagle-confirm-button'><a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a></div>");
+    linkCDJR = ("<div class='inventory-listing-button inventory-confirm-button'><a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a></div>");
     return linkCDJR;
   }
 }
