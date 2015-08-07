@@ -22,7 +22,7 @@ if (saleclass === 'New') {
 	      	jQuery(this).find('.inventory-column-right').append(eprice);
     	});
 		jQuery('.inventory-listing-button.inventory-confirm-button.inventory_get_gform').removeClass('inventory-listing-button').removeClass('inventory-confirm-button').addClass('inventory-detail-button');
-		jQuery('.inventory_get_gform.inventory-detail-button').css({'background-color': 'pink','color': '#f2d337','font-weight': 'bold'});
+		jQuery('.inventory_get_gform.inventory-detail-button').css({'background-color': '#f2d337','color': '#ffffff','font-weight': 'bold'});
 	}
 	 else {	
 	//Detail
