@@ -17,7 +17,7 @@ if (saleclass === 'New') {
 		  vin = jQuery(this).attr('id');
       make=jQuery(this).find('.inventory-make').text();
       windowSticker = addWindowSticker(make);
-      jQuery(this).find('.listing-bottom-container-one').append(windowSticker);
+      jQuery(this).find('.inventory-listing-buttons').append(windowSticker);
     });
 	}
 	 else {	
@@ -50,7 +50,7 @@ function addWindowSticker(make){
     	return linkFord;
   		break;
   	case 'Chevrolet':
-  		linkChevy =("<div class='inventory-listing-button inventory-confirm-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
+  		linkChevy =("<div class='inventory-detail-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
   		return linkChevy;
   		break;
   }
