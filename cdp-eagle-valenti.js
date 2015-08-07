@@ -18,8 +18,11 @@ if (saleclass === 'New') {
 	      	make=jQuery(this).find('.inventory-make').text();
 	      	windowSticker = addWindowSticker(make);
 	      	jQuery(this).find('.inventory-listing-buttons').append(windowSticker);
-	      	jQuery(this).find('.inventory-column-right').append(jQuery('.inventory-listing-button.inventory-confirm-button.inventory_get_gform'));
+			eprice = jQuery(this).find('.inventory-listing-button.inventory-confirm-button.inventory_get_gform');
+	      	jQuery(this).find('.inventory-column-right').append(eprice);
     	});
+		jQuery('.inventory-listing-button.inventory-confirm-button.inventory_get_gform').removeClass('inventory-listing-button').removeClass('inventory-confirm-button').addClass('inventory-detail-button');
+		jQuery('.inventory_get_gform.inventory-detail-button').css({'background-color': 'pink','color': '#f2d337','font-weight': 'bold'});
 	}
 	 else {	
 	//Detail
@@ -47,18 +50,18 @@ if (saleclass === 'New') {
 function addWindowSticker(make){
   switch(make){
   	case 'Ford':
-  		linkFord =("<div class='inventory-detail-button'><a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a></div>");
+  		linkFord =("<div class='inventory-listing-button inventory-details-button'><a class='ws' target='_blank' href='http://fordlabels.webview.biz/webviewhybrid/WindowSticker.aspx?vin="+vin+"&ref=VL'>Window Sticker</a></div>");
     	return linkFord;
   		break;
   	case 'Chevrolet':
-  		linkChevy =("<div class='inventory-detail-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
+  		linkChevy =("<div class='inventory-listing-button inventory-details-button'><a class='ws' target='_blank' href='http://www.bobvalentichevy.com/f_WindowSticker?VIN="+vin+"'>Window Sticker</a></div>");
   		return linkChevy;
   		break;
   }
   
   makeRegex=/(chrysler|dodge|ram|jeep)/i;
   if (makeRegex.test(make)) {
-    linkCDJR = ("<div class='inventory-detail-button'><a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a></div>");
+    linkCDJR = ("<div class='inventory-listing-button inventory-details-button'><a class='ws' target='_blank' href='http://www.chrysler.com/hostd/windowsticker/getWindowStickerPdf.do?vin="+vin+"'>Window Sticker</a></div>");
     return linkCDJR;
   }
 }
