@@ -17,7 +17,7 @@ if (saleclass === 'New') {
 		  	vin = jQuery(this).attr('id');
 	      	make=jQuery(this).find('.inventory-make').text();
 	      	windowSticker = addWindowSticker(make);
-	      	jQuery(this).find('.inventory-column-right').append(windowSticker);
+	      	//jQuery(this).find('.inventory-column-right').append(windowSticker);
 	      	jQuery(this).find('.inventory-column-right').append(jQuery('.inventory-listing-button.inventory-confirm-button.inventory_get_gform'));
     	});
 	}
