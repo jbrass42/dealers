@@ -8,6 +8,7 @@ if (saleclass === 'New') {
   jQuery('.inventory-strike-through.inventory-asking-price.inventory-ais').remove(); 
   jQuery('.inventory-asking-price.inventory-main-price').remove(); 
   jQuery('.inventory-your-price.inventory-ais.inventory-main-price').remove();
+  jQuery('.inventory-sale-price.inventory-ais.inventory-main-price').remove();
   
 	//List
 	if (jQuery('#inventory-listing').length){
