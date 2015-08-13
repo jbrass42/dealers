@@ -1,7 +1,6 @@
 if (jQuery('#cardealerpress-inventory').length){
 	saleclass=jQuery('.inventory-saleclass:first').text();		
 //NEW List and Detail
-			jQuery('.inventory-listing-buttons .inventory-listing-button.inventory-confirm-button.inventory_get_gform').remove();
 
 if (saleclass === 'New') {
   jQuery('.inventory-asking-price.inventory-main-price').remove(); 
