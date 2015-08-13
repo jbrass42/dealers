@@ -12,17 +12,18 @@ if (saleclass === 'New') {
   
 	//List
 	if (jQuery('#inventory-listing').length){
-	  jQuery('#inventory-top-search').prepend(jQuery('#detail-widget-area'));  //move search widget to top
-      jQuery('#detail-widget-area .inventory-list:last').remove();
+		jQuery('#inventory-top-search').prepend(jQuery('#detail-widget-area'));  //move search widget to top
+    jQuery('#detail-widget-area .inventory-list:last').remove();
 	
 		jQuery('.inventory-vehicle').each(function(){
 		  vin = jQuery(this).attr('id');
-      	  make=jQuery(this).find('.inventory-make').text();
-      	  windowSticker = addWindowSticker(make);
-      	  jQuery(this).find('.inventory-listing-buttons').append(windowSticker);
+      make=jQuery(this).find('.inventory-make').text();
+      windowSticker = addWindowSticker(make);
+    	jQuery(this).find('.inventory-listing-buttons').append(windowSticker);
 			
-		  customEprice = moveEprice(vin);
-	      jQuery(this).find('.inventory-price').append(customEprice);	
+			eprice = this.getElementsByClassName('inventory_get_gform');
+			jQuery(this).find('.inventory-price').append(eprice);	
+			jQuery('.inventory_get_gform').addClass('inventory-detail-button custom-eprice').removeClass('inventory-listing-button inventory-confirm-button');	
 		});
 	}
 	 else {	
@@ -43,9 +44,9 @@ if (saleclass === 'New') {
 				vin = jQuery(this).attr('id');
 				text = "<a class='carfax' href='http://www.carfax.com/VehicleHistory/p/Report.cfx?partner=DVW_1&vin="+vin+"' target='_blank'><img src='http://www.carfaxonline.com/media/img/subscriber/buyback.jpg'; width='145' height='56' border='0'></a>";
 				jQuery(this).find('.inventory-column-right').append(text);
-		  customEprice = moveEprice(vin);
-	      jQuery(this).find('.inventory-price').append(customEprice);
-			  
+				eprice = this.getElementsByClassName('inventory_get_gform');
+				jQuery(this).find('.inventory-price').append(eprice);	
+				jQuery('.inventory_get_gform').addClass('inventory-detail-button custom-eprice').removeClass('inventory-listing-button inventory-confirm-button');
 			});
 			jQuery('.carfax').css({'display':'block','margin':'5% 0 0 0'});
 		} 
@@ -70,8 +71,3 @@ function addWindowSticker(make){
   }
 }
 
-function moveEprice(vin){
-		
-	customEprice = ('<div class="inventory_get_gform inventory-detail-button custom-eprice" name="Get Your ePrice" key='+vin+'>Get Your ePrice</div>');
-	return customEprice;
-}
